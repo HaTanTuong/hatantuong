@@ -3,6 +3,10 @@ table {
     width: 40%;
     background-color: lightgreen;
 }
+h1{
+    text-align: center;
+    color: black;
+}
 td, th {
     border: 1px solid rgb(20, 20, 26);
     padding: 5px;

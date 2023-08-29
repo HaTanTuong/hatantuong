@@ -3,14 +3,23 @@
 <head>
     <meta charset="utf-8">
     <title> Sign up </title>
+    <link rel="stylesheet" href="CSS/form.css">
 </head>
-<body>
+<center>
+    <body>
+    
     <h1>Sign up</h1>
     <ul>It's free and always will be</ul>
     <form action="" method="post" name="register">
-        <input type="text" name="firstname" placeholder="First name"/><input type="text" name="surname" placeholder="Surname"/> <br/>
-        <input type="email" name="email" placeholder="Phone number or email address"/> <br/>
-        <input type="email" name="email" placeholder="ReEnter phone number or email address"/> <br/>
+        <label for="fname">Họ</label></br>
+        <input type="text" name="firstname" placeholder="First name"/><br/>
+        <label for="fname">Tên</label></br>
+        <input type="text" name="surname" placeholder="Surname"/> <br/>
+        <label for="fname">Nhập số điện thoại hoặc địa chỉ email</label><br/>
+        <input type="text" name="email" placeholder="Phone number or email address"/> <br/>
+        <label for="fname">Nhập lại số điện thoại hoặc địa chỉ email</label> <br/>
+        <input type="text" name="email" placeholder="ReEnter phone number or email address"/> <br/>
+        <label for="fname">Mật khẩu</label></br>
         <input type="password" name="password" placeholder="New password"/> <br/>
         <h2>Birth day</h2> 
         <select>
@@ -74,10 +83,11 @@
             <option>2007</option>
         </select>why do I need to provide may date of birth?</br>
     </br>
-        <img src="logofb.png.webp" alt="Ảnh FB" width= 150px height= 150px>
+        <img src="img/logofb.png.webp" alt="Ảnh FB" width= 150px height= 150px>
     </br>
         <input type="checkbox" name="checkbox"/>Male  <input type="checkbox" name="checkbox"/>Female <br/>
         <input type="submit" name="submit" value="Create account"/> <br/>
     </form>
 </body>
+</center>
 </html>
