@@ -5,39 +5,72 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <body>
 
-    <div class="w3-container">
-        <h2>Hà Tấn Tường - 2121050164</h2>
-        <p>Lớp w3-panel thêm lề trên và dưới 16px cũng như phần đệm bên trái và bên phải 16px cho bất kỳ phần tử HTML nào.</p>
-      
-        <div class="w3-panel w3-red">
-          <p>Tôi là sinh viên năm 3</p>
-        </div>
-        <div class="w3-panel w3-pale-green">
-          <p>Lớp w3-panel hoàn hảo để hiển thị các ghi chú. Ghi chú thường được hiển thị với màu nhạt</p>
-        </div>
-      
-        <div class="w3-panel w3-leftbar w3-sand w3-xxlarge w3-serif">
-          <p><i>Lớp w3-panel hoàn hảo để hiển thị các trích dẫn:"Làm cho nó đơn giản nhất có thể, nhưng không đơn giản hơn."</i></p>
-        </div>
-        <div class="w3-panel w3-blue w3-round-xlarge">
-            <p>bo tròn</p>
-        </div>
-        <div class="w3-panel w3-blue w3-card-4">
-            <p>Bảng dưới dạng thẻ</p>
-        </div>
-        <div class="w3-panel w3-display-container w3-blue">
-            <span onclick="this.parentElement.style.display='none'"
-            class="w3-button w3-display-topright">X</span>
-            <p>Nhấp vào X để đóng bảng này.</p>
-        </div>
-        <button class="w3-btn" onclick="document.getElementById('id01').style.display='block'">Show panel</button>
-
-        <div id="id01" class="w3-panel w3-green w3-display-container" style="display:none">
-        <span onclick="this.parentElement.style.display='none'"
-        class="w3-button w3-display-topright">X</span>
-        <p>Click on the X to close this panel.</p>
-        <p>Click on the X to close this panel.</p>
-        </div>
+  <div class="w3-container">
+    <h2>Hà Tấn Tường - 2121050164</h2>
+  
+    <div class="w3-panel w3-border w3-border-red">
+      <p>đường viền đỏ </p>
     </div>
+    
+    <div class="w3-panel w3-border-left w3-border-blue">
+      <p>đường viền bên trái màu xanh.</p>
+    </div>
+    
+    <div class="w3-panel w3-border-right w3-border-yellow">
+      <p>đường viền bên phải màu vàng.</p>
+    </div>
+    
+    <div class="w3-panel w3-border-top w3-border-bottom w3-border-red w3-pale-red">
+      <p>đường viên trên và dưới, nền màu xanh lá.</p>
+    </div>
+    <div class="w3-panel w3-border"> 
+      <p>đường viền bình thường.</p>
+    </div>
+    
+    <div class="w3-panel w3-border w3-round-small">
+      <p>đường viền tròn nhỏ.</p>
+    </div>
+    
+    <div class="w3-panel w3-border w3-round">
+      <p>đường viền tròn.</p>
+    </div>
+
+    <div class="w3-panel w3-border w3-round-large">
+      <p>đường viền tròn lớn.</p>
+    </div>
+
+    <div class="w3-panel w3-border w3-round-xlarge">
+      <p>đường viền tròn xlarge.</p>
+    </div>
+
+    <div class="w3-panel w3-border w3-round-xxlarge">
+      <p>đường viền tròn xxlarge.</p>
+    </div>
+    <div class="w3-panel w3-leftbar w3-border-white w3-hover-border-green">
+      <p>đường viền trái dày (vô hình) chuyển sang màu xanh lục khi di chuột..</p>
+    </div>
+    
+    <div class="w3-panel w3-leftbar w3-border-blue">
+      <p>đường viền trái dày màu xanh.</p>
+    </div>
+    
+    <div class="w3-panel w3-leftbar w3-border-blue w3-pale-blue">
+      <p>đường viền dày trái màu xanh lam và màu nên xanh nhạt.</p>
+    </div>
+    
+    <div class="w3-panel w3-topbar w3-bottombar w3-border-red w3-pale-red">
+      <p>đường viền trên màu đỏ dày và màu nên đỏ nhạt.</p>
+    </div>
+    <div class="w3-panel w3-border w3-hover-border-red">
+      <p>đường viền chuyển sang màu đỏ khi di chuột</p>
+    </div>
+    
+    <div class="w3-panel w3-border w3-border-red w3-hover-border-yellow">
+      <p>đường viền màu đỏ chuyển sang màu vàng khi di chuột</p>
+    </div>
+    <div style="border:16px solid white" class="w3-panel w3-hover-border-orange">
+      <p>Đường viền dày màu trắng (vô hình) chuyển sang màu cam khi di chuột.</p>
+    </div>
+  </div>
 </body>
 </html> 
