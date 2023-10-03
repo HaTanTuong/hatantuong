@@ -1,20 +1,37 @@
- <!--const: Khai báo biến có giá trị không thay đổi được-->
- <script>
-    const message = 'Hà Tấn Tường 2121050164';
-    message = 'Hà Tấn Tường';
-    alert(message);
-</script>
-<!--let: chỉ tồn tại bên trong {let tên_biến} chứa nó-->
-<script>
-    if(true){
-        let message ='hello';
-    }
-    alert(message);
-</script>
-<!--var: tồn tại bên trong function-->
-<script>
-    if(true){
-        var message = "Hello!";
-    }
-    alert(message);
-</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>Hà Tấn Tường_2121050164</title>
+    <script>
+        document.addEventListener('DOMConlenloaded', function(){
+            document.querySelector('#form').onclick = sayHello;
+        });
+
+        function sayHello()
+        {
+            const name = document.querySelector('#name').value;
+                alert(`Hello ${name}!`);
+        } 
+    </script>
+</head>
+<body>
+    <div class="w3-card-4">
+        <div class="w3-container w3-brown">
+          <h2>Hà Tấn Tường</h2>
+        </div>
+        <form id="form" class="w3-container" >
+          <p>      
+          <label class="w3-text-brown"><b>First Name</b></label>
+          <input id="name" class="w3-input w3-border w3-sand" name="first" type="text"></p>
+          <p>      
+          <label class="w3-text-brown"><b>Last Name</b></label>
+          <input class="w3-input w3-border w3-sand" name="last" type="text"></p>
+          <p>
+          <button class="w3-btn w3-brown">Register</button></p>
+        </form>
+      </div>
+</body>
+</html>
