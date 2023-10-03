@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title> CSS Table </title>
+    <style>
+      table{
+        border: 2px solid green;
+        border-collapse: collapse;
+        width: 50%
+      }
+      th, td{
+        border: 1px solid green;
+        padding: 8px;
+        text-align: center;
+      }
+      th {
+        background-color: lightblue;
+        color: black;
+      }
+      .odd {
+        background-color: lightgreen;
+      }
+      .even {
+        background-color: lightgreen;
+      }
+      tr:hover {
+        background: red;
+        color: white;
+      }
+      .red
+      {
+        color: red;
+      }
+      #CND {
+        background-color: orange;
+      }
+    </style>
+  </head>
+  <body>
+    <center>
+    <table>
+      <caption><b><h2>Tỷ giá ngoại tệ<h2></b></caption>
+      <tr>
+        <th>Loại ngoại tệ</th>
+        <th>Mua vào</th>
+        <th>Bán ra</th>
+        <th>Chuyển khoản</th>
+      </tr>
+      <tr class="even">
+        <td>AUD</td>
+        <td>15.400</td>
+        <td>15.550</td>
+        <td>15.466</td>
+      </tr>
+      <tr>
+        <td id='CND'>CND</td>
+        <td>15.55</td>
+        <td>15.660</td>
+        <td>15.456</td>
+      </tr>
+      <tr class="odd red">
+        <td>JPD</td>
+        <td>15.4500</td>
+        <td>15.5770</td>
+        <td>15.466545</td>
+      </tr>
+    </center>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+h1 {
+    color: rgb(77, 33, 17);
+    font-size: 30pt;
+    text-shadow: 5px 2px 4px grey;
+    font-weight: bold;
+    text-align: center;
+}
+h2 {
+    text-decoration: underline;
+    color: blueviolet;
+
+}
+
+table {
+    border: 2px solid blue;
+    border-collapse: collapse;
+    width: 30%;
+}
+
+td,th {
+    border: 1px solid blue;
+    padding: 5px;
+    text-align: center;
+}
+
+th {
+    background-color: rgb(204, 129, 102);
+}
