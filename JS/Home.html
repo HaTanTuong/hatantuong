@@ -5,20 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <script>
+        document.addEventListener('DOMConlenloaded', function(){
+            document.querySelector('button').onclick = count;
+        });
+
         let counter = 0;
+        
         function count()
         {
             counter++;
             document.querySelector('#counter').innerHTML= counter;
             if(counter % 10 ===0){
-                alert('Hà Tấn Tường _2121050164')
+                alert(`Counter is at ${counter}!`);
             }
         } 
     </script>
-    <title>Hà Tấn Tường</title>
+    <title>Hà Tấn Tường _ 2121050164</title>
 </head>
 <body>
     <h1 id="counter">0</h1>
-    <button onclick="count()" class="w3-button w3-white w3-border w3-border-red w3-round-large">Mã sinh viên</button>
+    <button>Click here</button>
 </body>
 </html>
