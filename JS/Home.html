@@ -5,15 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <script>
-        function Hello()
+        let counter = 0;
+        function count()
         {
-            document.querySelector('h1').innerHTML='Hà Tấn Tường _2121050164';
+            counter++;
+            document.querySelector('#counter').innerHTML= 'Hà Tấn Tường_2121050164';
         } 
     </script>
     <title>Hà Tấn Tường</title>
 </head>
 <body>
-    <h1>Hà Tấn Tường</h1>
-    <button onclick="Hello()" class="w3-button w3-white w3-border w3-border-red w3-round-large">Mã sinh viên</button>
+    <h1 id="counter">0</h1>
+    <button onclick="count()" class="w3-button w3-white w3-border w3-border-red w3-round-large">Mã sinh viên</button>
 </body>
 </html>
