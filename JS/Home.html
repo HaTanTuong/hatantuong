@@ -4,31 +4,99 @@
     <title>Hà Tấn Tường_2121050164</title>
     <script>
         document.addEventListener('DOMContentLoaded', function(){
-            document.querySelector('#form').onsubmit = tinhtong;
+            document.querySelector('#form').onsubmit = kiemtra;
         });
 
-        function tinhtong(event) {
-            // Ngăn form submit mặc định
-            event.preventDefault();
-
+        function kiemtra()
+        {
             // Lấy giá trị từ các input
-            const a = parseInt(document.querySelector('#a').value);
-            const b = parseInt(document.querySelector('#b').value);
+            const hoten = document.querySelector('#hoten').value;
+            const tenDN = document.querySelector('#tenDN').value;
+            const pass = document.querySelector('#pass').value;
+            const nhaplaipass = document.querySelector('#nhaplaipass').value;
+            const email = document.querySelector('#email').value;
+            const std = document.querySelector('#sodienthoai').value;
 
-            // Tính tổng
-            const tong = a + b;
+            // Kiểm tra nếu có ít nhất một trường không được nhập
+            if (hoten === '' || tenDN === '' || pass === '' || nhaplaipass === '' || email === '') 
+            {
+                alert('Vui lòng điền đầy đủ thông tin vào các trường');
+                    return false; // Ngăn form submit nếu thông tin còn thiếu
+            }
 
-            // Hiển thị tổng trong thẻ p
-            document.querySelector('p').innerHTML = `Tổng a và b là: ${tong}`;
+                // Kiểm tra tên đăng nhập có ít nhất 8 ký tự
+            if (tenDN.length < 8) 
+            {
+                alert('Tên đăng nhập phải có ít nhất 8 ký tự.');
+                return false; // Ngăn form submit nếu tên đăng nhập không đủ dài
+            }
+
+                // Kiểm tra mật khẩu và nhập lại mật khẩu phải trùng nhau
+            if (pass !== nhaplaipass) 
+            {
+                alert('Mật khẩu nhập lại không trùng khớp.');
+                return false; // Ngăn form submit nếu mật khẩu không trùng khớp
+            }
+
+                // Kiểm tra email chứa ký tự '@'
+            if (!email.includes('@')) 
+            {
+                alert('Email phải chứa ký tự "@".');  
+                return false; // Ngăn form submit nếu email không hợp lệ
+            }
+
+            // Tiếp tục xử lý form nếu thông tin đầy đủ và đáp ứng các yêu cầu
+            alert('Đăng ký thành công')
+            return true; // Cho phép form submit nếu thông tin đầy đủ và hợp lệ
         } 
     </script>
 </head>
 <body>
-        <form id="form" >
-            Nhập số a: <input type="number" id ="a" autofocus><br>
-            Nhập số b: <input type="number" id ="b" autofocus><br>
-            <p>Tổng a và b là:</p>
-            <input type="submit" value="Tính tổng">
-        </form>
+    <form id="form" onsubmit="return kiemtra();">
+
+                <label>Họ tên</label><br>
+                <input type="text" id="hoten" required><br><!--required: yêu cầu người dùng phải điền vào trường input trước khi gửi biểu mẫu-->
+                
+                <label>Tên Đăng nhập</label><br>
+                <input type="text" id="tenDN" required pattern=".{8,}" title="Tên đăng nhập phải có ít nhất 8 ký tự."><br>
+                <!--Pattern: định nghĩa một biểu thức chính quy (regex pattern) mà giá trị của một trường input phải tuân theo.
+                    Nếu giá trị không khớp với biểu thức chính quy, trình duyệt sẽ hiển thị thông báo lỗi.-->
+                
+                <label>Password</label><br>
+                <input type="password" id="pass" required><br>
+                
+                <label>Nhập lại password</label><br>
+                <input type="password" id="nhaplaipass" required><br>
+                
+                <label>Quốc tịch</label><br>
+                <select required>
+                    <option>Việt nam</option>
+                    <option>Mỹ</option>
+                    <option>Trung Quốc</option>
+                    <option>Nga</option>
+                    <option>Nhật</option>
+                    <option>Ấn độ</option>
+                </select><br>
+                
+                <label>Email</label><br>
+                <input type="email" id="email" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" title="Email không hợp lệ."><br>
+
+                <label>Số điện thoại</label><br>
+                <input type="tel" id="sodienthoai" required><br>
+                
+                <label>Câu hỏi bí mật</label><br>
+                <select required>
+                    <option>Bạn đang là sinh viên trường nào?</option>
+                    <option>Bạn đã lấy vợ chưa?</option>
+                    <option>Bạn bao nhiêu tuổi?</option>
+                    <option>Bạn học ngành gì?</option>
+                </select><br>
+                
+                <label>Trả lời</label><br>
+                <input type="text" id="traloi" required><br>
+                
+                <input type="submit" value="Kiểm tra">
+                <input type="submit" value="Đăng ký">
+            </form> 
 </body>
 </html>
