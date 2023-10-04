@@ -1,29 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <title>Hà Tấn Tường_2121050164</title>
     <script>
         document.addEventListener('DOMContentLoaded', function(){
-            document.querySelector('#form').onsubmit = sayHello;
+            document.querySelector('#form').onsubmit = tinhtong;
         });
 
-        function sayHello()
-        {
-            const name = document.querySelector('#name').value;
-                alert(`Hello ${name}!`);
+        function tinhtong(event) {
+            // Ngăn form submit mặc định
+            event.preventDefault();
+
+            // Lấy giá trị từ các input
+            const a = parseInt(document.querySelector('#a').value);
+            const b = parseInt(document.querySelector('#b').value);
+
+            // Tính tổng
+            const tong = a + b;
+
+            // Hiển thị tổng trong thẻ p
+            document.querySelector('p').innerHTML = `Tổng a và b là: ${tong}`;
         } 
     </script>
 </head>
 <body>
-        <form id="form" class="w3-container" >
-          <p>      
-          <label class="w3-text-brown"><b>Họ tên</b></label>
-          <input id="name" class="w3-input w3-border w3-sand" autofocus placeholder="Name"  type="text"></p>
-          <p>
-            <input type="submit">      
-          </form>
+        <form id="form" >
+            Nhập số a: <input type="number" id ="a" autofocus><br>
+            Nhập số b: <input type="number" id ="b" autofocus><br>
+            <p>Tổng a và b là:</p>
+            <input type="submit" value="Tính tổng">
+        </form>
 </body>
 </html>
