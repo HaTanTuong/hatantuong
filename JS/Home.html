@@ -5,25 +5,19 @@
     <script>
         document.addEventListener('DOMContentLoaded', function()
         {
-            document.querySelector('#red').onclick = function()
+            document.querySelectorAll('.color-change').forEach(function(button)
             {
-                document.querySelector('#HTT').style.color = 'red';
-            };
-            document.querySelector('#yellow').onclick = function()
-            {
-                document.querySelector('#HTT').style.color = 'yellow';
-            };
-            document.querySelector('#green').onclick = function()
-            {
-                document.querySelector('#HTT').style.color = 'green';
-            };
-        })
+                button.onclick = function(){
+                    document.querySelector('#HTT').style.color = button.dataset.color;
+                };
+            });
+        });
     </script>
 </head>
 <body>
     <h1 id="HTT">Hà Tấn Tường_2121050164</h1>
-    <button id="red">Red</button>
-    <button id="yellow">Yellow</button>
-    <button id="green">Green</button>
+    <button class="color-change" data-color="red">Red</button>
+    <button class="color-change" data-color="blue">Blue</button>
+    <button class="color-change" data-color="green">Green</button>
 </body>
 </html>
