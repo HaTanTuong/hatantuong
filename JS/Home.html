@@ -5,19 +5,25 @@
     <script>
         document.addEventListener('DOMContentLoaded', function()
         {
-            document.querySelectorAll('.color-change').forEach(function(button)
+            document.querySelector('#new-task').onsubmit =function()
             {
-                button.onclick = function(){
-                    document.querySelector('#HTT').style.color = button.dataset.color;
-                };
-            });
+                const li =document.createElement('li');
+                li.innerHTML = document.querySelector('#task').value;
+                document.querySelector('#tasks').append(li);
+                document.querySelector('#task').value = '';
+                return false;
+            };
         });
     </script>
 </head>
 <body>
-    <h1 id="HTT">Hà Tấn Tường_2121050164</h1>
-    <button class="color-change" data-color="red">Red</button>
-    <button class="color-change" data-color="blue">Blue</button>
-    <button class="color-change" data-color="green">Green</button>
+    <h1>Tasks</h1>
+    <ul id="tasks">
+
+    </ul>
+    <form id="new-task">
+        <input type="text" id="task" autofocus placeholder="New Task" >
+        <input type="submit">
+    </form>
 </body>
 </html>
