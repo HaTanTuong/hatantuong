@@ -4,15 +4,25 @@
     <title>Hà Tấn Tường_2121050164</title>
     <script>
         document.addEventListener('DOMContentLoaded', function()
-        {
+        {   //Theo mặc định nut gửi bị tắt
+            document.querySelector('#submit').disabled = true ;
+            //Chỉ bật nút khi có văn bản trong trường
+            document.querySelector('#task').onkeyup = function() 
+                { 
+                    document.querySelector('#submit').disabled = false ;
+                };
             document.querySelector('#new-task').onsubmit =function()
-            {
-                const li =document.createElement('li');
-                li.innerHTML = document.querySelector('#task').value;
-                document.querySelector('#tasks').append(li);
-                document.querySelector('#task').value = '';
-                return false;
-            };
+                {   //tạo mục mới cho list
+                    const li =document.createElement('li');
+                    li.innerHTML = document.querySelector('#task').value;
+                    //thêm mục mới vào danh sách nhiệm vụ
+                    document.querySelector('#tasks').append(li);
+                    //xóa trường nhập và tắt nút lần nữa
+                    document.querySelector('#task').value = '';
+                    document.querySelector('#submit').disabled = true;
+                    //Dừng gửi biểu mẫu
+                    return false;
+                };
         });
     </script>
 </head>
@@ -22,8 +32,8 @@
 
     </ul>
     <form id="new-task">
-        <input type="text" id="task" autofocus placeholder="New Task" >
-        <input type="submit">
+        <input type="text" id="task" autocomplete="off" autofocus placeholder="New Task" >
+        <input type="submit" id="submit">
     </form>
 </body>
 </html>
