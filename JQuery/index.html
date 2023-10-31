@@ -4,15 +4,13 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script>
     $(document).ready(function(){
-        $("p").dblclick(function(){
-            $(this).hide();// nhấp đúp vào phần tử HTML
+        $("#p1").mouseenter(function(){
+            alert("Bạn đã di chuột vào tên tôi!"); //di chuyển chuột vào phần tử HTML
         });
     });
 </script>
 </head>
 <body>
-
-    <p>Hà Tấn Tường - 2121050164</p>
-    <p>Đại học Mỏ - Địa chất</p>
+    <p id="p1">Hà Tấn Tường - 2121050164</p>
 </body>
 </html>
