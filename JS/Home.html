@@ -8,8 +8,11 @@
             document.querySelector('#submit').disabled = true ;
             //Chỉ bật nút khi có văn bản trong trường
             document.querySelector('#task').onkeyup = function() 
-                { 
-                    document.querySelector('#submit').disabled = false ;
+                {   if (document.querySelector('#task').value.length>8)
+                        document.querySelector('#submit').disabled = false ;
+                    else
+                        document.querySelector('#submit').disabled = true ;
+
                 };
             document.querySelector('#new-task').onsubmit =function()
                 {   //tạo mục mới cho list
