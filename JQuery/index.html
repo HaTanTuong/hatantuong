@@ -4,35 +4,21 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script>
     $(document).ready(function(){
-        $("#p1").hover(function(){
-            alert("You entered p1!");
-        },
-        function(){
-            alert("Bye! You now leave p1!");
+        $("#hide").click(function(){
+            $("p").hide();
         });
-        //Hàm đầu tiên được thực thi khi chuột vào phần tử HTML
-        //và hàm thứ hai được thực thi khi chuột rời khỏi phần tử HTML:
+        $("#show").click(function(){
+            $("p").show();
+        });
     });
-    $(document).ready(function(){
-        $("#i1").focus(function(){
-            $(this).css("background-color", "yellow");
-        });
-        $("#i1").blur(function(){
-            $(this).css("background-color", "green");
-        });
-        // focus()đính kèm hàm xử lý sự kiện vào trường biểu mẫu HTML
-        // blur()đính kèm hàm xử lý sự kiện vào trường biểu mẫu HTML
-    });
-
 </script>
 </head>
 <body>
-    <h4>hover()</h4>
-    <p id="p1">Hà Tấn Tường - 2121050164</p>
-    <hr>
-    <h4>focus()</h4>
-    Name: <input id="i1" type="text" name="fullname"><br>
-    Email: <input id="i1" type="text" name="email">
-    <hr>
+
+    <p>Hà Tấn Tường - 2121050164</p>
+
+    <button id="hide">Hide</button>
+    <button id="show">Show</button>
+
 </body>
 </html>
