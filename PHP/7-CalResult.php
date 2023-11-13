@@ -6,8 +6,11 @@
 </head>
 <body>
     <?php
-        $result = $_GET["firstNumber"] + $_GET["secondNumber"];
-        echo $result;
+    /**ph code start form here
+     * 
+     */
+        $result = $_GET["firstNumber"] + $_GET["secondNumber"]; // calculate the result
+        echo $result; // print result to web screen
     ?>
 </body>
 </html>
