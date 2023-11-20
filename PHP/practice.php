@@ -1,23 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Hà Tấn Tường - 2121050164</title>
-</head>
-<body>
-<h1>Currency Exchange</h1>
-  <form method="get" action ="9-ifPracticeResult.php">
-    <label for="amount">Amount:</label><br>
-    <input type="number" id="amount" name="amount"><br>
-    <label for="currency">Select currency:</label><br>
-    <select id="currency" name="currency">
-        <option value="USD">USD - Đô la Mỹ</option>
-        <option value="AUD">AUD - Đô la Úc</option>
-        <option value="JPY">JPY - Yên Nhật</option>
-        <option value="EUR">EUR - Euro</option>
-    </select><br>
-    <input type="submit" name="convert" value="Chuyển đổi">
-  </form>
-</body>
-</html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <h3>Hà Tấn Tường</h3>
+            <form action="" method="get">
+                Math: <input type="number" name="math"><br/>
+                Physics: <input type="number" name="physics"><br/>
+                Chemistry: <input type="number" name="chemistry"><br/>
+                <input type="submit" value="Xét">
+            </form>
+        <?php
+            $math = $_GET["math"];
+            $physics = $_GET["physics"];
+            $chemistry = $_GET["chemistry"];
+            $Sum =  ($math + $physics + $chemistry);
+            echo"Tổng điểm của bạn: $Sum </br>";
+
+            if ($Sum >= 22){
+                echo 'Bạn có thể trúng tuyển ngành: CNTT, CNTT chất lượng cao, KHDL, Địa chất, Môi trường';
+            }
+            else if ($Sum>=18 && $Sum <22){
+                echo 'Bạn có thể trúng tuyển ngành: CNTT, KHDL, Địa chất, Môi trường';
+
+            }
+            else if ($Sum>=17 && $Sum <18){
+                echo 'Bạn có thể trúng tuyển ngành: Địa chất, Môi trường';
+
+            }
+            else if ($Sum>= 15&& $Sum < 17){
+                echo 'Bạn có thể trúng tuyển ngành: Môi trường';
+            }
+            else{
+                echo 'Bạn không trúng tuyển ngành nào';
+            }
+
+
+
+            
+        ?>
 
