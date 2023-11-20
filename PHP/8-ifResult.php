@@ -11,13 +11,13 @@
         if ($_GET["response"] == "yes"){
 
          //if-1 statement, condition: $_GET["response")= "yes":"
-        echo "HAS BEEN QUITED"; // 1-1 code Loch
+        echo "HAS BEEN QUITED"; // if-1 code block
         }
-        if ($_GET["response"] == "no") //f-2 statement; condition: $_GET["response"]
+        else 
         {
-            echo "WILL BE CONTINUED IN 3 SECONDS"; // 37-2 code blach
-            // after if statement 
+            echo "WILL BE CONTINUED IN 3 SECONDS"; // else code block 
         }
+        // after if statement 
         echo "<br>AFTER IF STATEMENT";
     ?>
 </body>
