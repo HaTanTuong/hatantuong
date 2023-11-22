@@ -1,23 +1,16 @@
-<?php
-    // befor if statement
-    $USD = 22308;
-    $EUR= 27308;
-    $SGD= 17000;
-    $JPY = 120;
-    $amount = $_GET['amount'];
-    echo "$amount USD is equal ";
-    if ($_GET["currency"] == "USD"){ //iƒ-1 statement; condition: $_GET["response"] = "yea
-    echo $amount * $USD; // if-1 code block
-    }
-    elseif ($_GET["currency"] == "EUR") {
-    echo $amount * $EUR; // elseif-1 code block
-    }
-    elseif ($_GET["currency"] == "SGD") {
-    echo $amount * $SGD; // elseif-2 code block
-    }
-    else {
-    echo $amount * $JPY; 
-    }
-    // after if statement
-    echo " VND";
- ?>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<title>Hà Tấn Tường - 2121050164</title>
+</head>
+<body>
+    <?php
+        $exchangeRate = array("USD"=>22380, "EUR"=>27300, "SGD">17080, "JPY"=>128);
+        $amount = $_GET['amount'];
+        $currency = $_GET["currency"];
+
+        echo " Samount USD is equal". number_format($amount* $exchangeRate[$currency])."VNĐ";
+    ?>
+</body>
+</html>
