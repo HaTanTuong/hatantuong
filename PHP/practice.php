@@ -1,50 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+$items = array('item1.png', 'item2.png', 'item3.png', 'item4.png');
+foreach ($items as $item)
+{
+    echo "<img src='images/$item' width= 50px height = 50px alt='$item'>";
+}
+?>
 
-<head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-</head>
 
-<body>
-    <?php
-        $math = $_GET["math"];
-        $physics = $_GET["physics"];
-        $chemistry = $_GET["chemistry"];
-        $english = $_GET["english"];
-        $literature = $_GET["literature"];
-        $history = $_GET["history"];
-        $Mean =  ($math + $physics + $chemistry + $english + $literature + $history) / 6;
-        echo "Điểm trung bình của bạn: $Mean </br>";
+<h1>function</h1>
+<h2>Hà Tấn Tường - 2121050164</h2>
+<?php
+$items = array('item5.png', 'item6.png');
 
-        if ($math < 0 || $math > 10) {
-            echo 'Điểm môn Toán phải từ 0 -> 10';
-        } else if ($physics < 0 || $physics > 10) {
-            echo 'Điểm môn Lý phải từ 0 -> 10';
-        } else if ($chemistry < 0 || $chemistry > 10) {
-            echo 'Điểm môn Hóa phải từ 0 -> 10';
-        } else if ($english < 0 || $english > 10) {
-            echo 'Điểm môn Anh Văn phải từ 0 -> 10';
-        } else if ($literature < 0 || $literature > 10) {
-            echo 'Điểm môn Văn phải từ 0 -> 10';
-        } else if ($history < 0 || $history > 10) {
-            echo 'Điểm môn Lịch Sử phải từ 0 -> 10';
-        } else if ($math <= 4 || $physics <= 4 || $chemistry <= 4 || $english <=  4 || $literature <= 4 || $history <= 4) {
-            echo 'Học sinh giỏi yếu';
-        } else {
-            $Mean = ($math + $physics + $chemistry + $english + $literature + $history) / 6;
+foreach ($items as $item)
 
-            if ($Mean < 5) {
-                echo "Học sinh yếu";
-            } else if ($Mean >= 5 && $Mean < 6.4) {
-                echo "Học sinh trung bình";
-            } else if ($Mean >= 6.4 && $Mean < 7.9) {
-                echo "Học sinh khá";
-            } else {
-                echo "Học sinh giỏi";
-            }
-        }
-    ?>
-</body>
-
-</html>
+{
+    echo "<img src='images/$item' width= 50px height = 50px alt='$item'>";
+}
+?>
