@@ -1,7 +1,30 @@
-<?php 
-    $items = array('item1.png', 'item2.png', 'item3.png', 'item4.png');
-    foreach ($items as $item)
-    {
-        echo "<img src='images/$item' width=50px height = 50px alt='$item'>";
-    }
-?>
+<h1>Hà Tấn Tường - 2121050164</h1><br>
+Ngày:
+<select>
+    <?php
+        for ($day=1; $day<= 31 ; $day++) 
+        { 
+            echo "<option value = '$day'> $day </option>";
+        }
+    ?>
+</select>
+Tháng:
+<select>
+    <?php
+        for ($month=1; $month <= 12 ; $month++) 
+        { 
+            echo "<option value = '$month'>$month</option>";
+        }
+    ?>
+</select>
+Năm:
+<select>
+    <?php
+        $today = getdate();
+        $curYear = $today["year"];
+        for ($year=1900;  $year <=$curYear ; $year+=1) 
+        { 
+            echo "<option value = '$year'>$year</option>";
+        }
+    ?>
+</select>
