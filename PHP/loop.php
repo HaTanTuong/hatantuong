@@ -1,7 +1,6 @@
 <?php 
     $x = 1;
     while($x <=10){
-        echo"Đây là số: $x <br>";
-        $x++;   
+        echo"Đây là số: $x <br>";   
     }
 ?>
