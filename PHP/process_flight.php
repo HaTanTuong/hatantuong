@@ -31,7 +31,7 @@
     $conn->close();
 ?>
 <?php
-    require "display_flight.php";
+    //require "display_flight.php";
 ?>
 </body>
 </html>l

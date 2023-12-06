@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <title>Hà Tấn Tường - 2121050164</title>
-        <style>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hà Tấn Tường - 2121050164</title>
+    <style>
             body {
                 font-family: Arial, sans-serif;
                 background-color: #f4f4f4;
@@ -40,17 +40,27 @@
                 background-color: #8c5bdb;
             }
         </style>
-    </head>
-    <body>
-        <h1>Add new Flight</h1>
+</head>
+<body>
+    <h1>Tìm kiếm chuyến bay</h1>
         <form action="process_flight.php" method="post" name="register">
             <label for="">Origin</label> <input type="text" name="origin" placeholder=""/> <br/>
             <label for="">Destination</label> <input type="text" name="destination" placeholder=""/> <br/>
-            <label for="">Duration</label> <input type="text" name="duration"/> <br/>
-            <input type="submit" name="submit" value="Add"/> <br/>
+            <input type="submit" value="Tìm Kiếm"/> <br/>
         </form>
-    </body>
         <?php
-            require 'display_flight.php'; // Yêu cầu file display_flights.php để hiển thị bảng chuyến bay
+            if (isset($_POST["origin"])) 
+            {
+                $origin = $_POST['origin'];
+                $destination = $_POST['destination'];
+
+                require 'connect.php';
+                mysqli_set_charset($conn,'UTF8');
+                $sql = "SELECT * FROM flights WHERE origin = '$origin' and destination = '$destination'";
+                $result = $conn->query($sql);
+                require('display_flight.php');
+                $conn->close();
+            }
         ?>
+</body>
 </html>
