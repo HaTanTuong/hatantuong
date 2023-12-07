@@ -43,24 +43,10 @@
 </head>
 <body>
     <h1>Tìm kiếm chuyến bay</h1>
-        <form action="process_flight.php" method="post" name="register">
+        <form action="display_flight.php" method="post" name="register">
             <label for="">Origin</label> <input type="text" name="origin" placeholder=""/> <br/>
             <label for="">Destination</label> <input type="text" name="destination" placeholder=""/> <br/>
             <input type="submit" value="Tìm Kiếm"/> <br/>
         </form>
-        <?php
-            if (isset($_POST["origin"])) 
-            {
-                $origin = $_POST['origin'];
-                $destination = $_POST['destination'];
-
-                require 'connect.php';
-                mysqli_set_charset($conn,'UTF8');
-                $sql = "SELECT * FROM flights WHERE origin = '$origin' and destination = '$destination'";
-                $result = $conn->query($sql);
-                require('display_flight.php');
-                $conn->close();
-            }
-        ?>
 </body>
 </html>

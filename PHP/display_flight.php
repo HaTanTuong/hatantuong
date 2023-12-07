@@ -32,6 +32,16 @@
 <body>
 <?php
     // Kiểm tra xem có hàng trả về không
+    if (isset($_POST["origin"])) 
+            {
+                $origin = $_POST['origin'];
+                $destination = $_POST['destination'];
+
+                require 'connect.php';
+                mysqli_set_charset($conn,'UTF8');
+                $sql = "SELECT * FROM flights WHERE origin = '$origin' and destination = '$destination'";
+                $result = $conn->query($sql);
+            }
     if ($result->num_rows > 0) {
         echo "<h2>Bảng Chuyến bay</h2>";
         echo "<table border='1'>";
