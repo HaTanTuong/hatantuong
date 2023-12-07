@@ -7,44 +7,37 @@
 </head>
 <!--HÀ TẤN TƯỜNG - 2121050164   -->
 <body>
-    <h1>Đăng ký chuyến bay</h1>
-    <form action="" method="post">
-        <label for="name">Họ và tên:</label>
-        <input type="text" name="name" required><br>
-
-        <label for="flight">Chuyến bay muốn đăng ký:</label>
+    <h1>Tìm kiếm hành khách trên một chuyến bay</h1>
+    <form action="" method="get">
+        <label for="flight_id">Nhập mã chuyến bay:</label>
         <input type="text" name="flight_id" required><br>
-
-        <input type="submit" value="Đăng ký">
+        <input type="submit" value="Tìm kiếm">
     </form>
     <?php
-    // Kiểm tra xem có dữ liệu được gửi từ form hay không
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        // Kết nối đến CSDL
-        require 'connect.php'; // Chứa thông tin kết nối đến CSDL
-
-        // Kiểm tra và nhận dữ liệu từ form
-        if (isset($_POST['name']) && isset($_POST['flight_id'])) {
-            $name = $_POST['name'];
-            $flight_id = $_POST['flight_id'];
-
-            // Thực hiện truy vấn để thêm dữ liệu vào bảng 'passengers'
-            $sql = "INSERT INTO passengers (name, flight_id) VALUES ('$name', '$flight_id')";
-
+       
+        require 'connect.php';
+    
+        if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['flight_id'])) {
+            $flight_id = $_GET['flight_id'];
+    
             // Thực hiện truy vấn
-            if ($conn->query($sql) === TRUE) {
-                echo "Đăng ký chuyến bay thành công!";
+            $sql = "SELECT * FROM passengers WHERE flight_id IN (SELECT id FROM flights WHERE flight_code = '$flight_id')";
+            $result = $conn->query($sql);
+    
+            if ($result->num_rows > 0) {
+                // Hiển thị danh sách hành khách cho chuyến bay cụ thể
+                echo "<h2>Danh sách hành khách:</h2>";
+                while ($row = $result->fetch_assoc()) {
+                    echo "Hành khách: " . $row['name'] . "<br>";
+                }
             } else {
-                echo "Lỗi: " . $sql . "<br>" . $conn->error;
+                echo "<p>Không có hành khách nào đăng ký chuyến bay này.</p>";
             }
-        } else {
-            echo "Dữ liệu từ form không hợp lệ";
         }
-
-        // Đóng kết nối
+    
         $conn->close();
-    }
     ?>
+    
 
 </body>
 
